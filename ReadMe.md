@@ -1,10 +1,10 @@
-1. Preparation
+## 1. Preparation
 pip install -qq opencv-contrib-python diffusers transformers git+https://github.com/huggingface/accelerate.git
 
-2. Modify hyperparameters and run on the terminal
+## 2. Modify hyperparameters and run on the terminal
 python main.py --mode canny --prompt "make animation character face" --num_steps 30 --seed 10 --data_dir C:/AI_Study/YAI/Controlnet/datasets --result_dir C:/AI_Study/YAI/Controlnet/result
 
-* params
+### * params
 mode: canny, pose (아직 pose는 구현 안됨)
 prompt: 괄호 안에 원하는 그림 text로 입력
 num_steps, seed: 결과 달라짐
