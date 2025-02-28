@@ -1,0 +1,7 @@
+ControlNet: canny method
+
+prompt: masterpiece, best quality, ultra-detailed, illustration, a person looks like a pikachu
+
+step: 30
+
+seed: 10
