@@ -48,6 +48,8 @@ def generation(args):
               generator=torch.manual_seed(seed),
               image=canny_img
           ).images[0]
+
+          (Image.fromarray(np.concatenate([original_img, canny_img, out_img], axis=1))).save(os.path.join(result_dir, img.split(".")[0]+"_out.png"))
   elif data_dir == "None" and img_path != "None":
       img = img_path.split("/")[-1]
       image_path = img_path
@@ -60,11 +62,9 @@ def generation(args):
               generator=torch.manual_seed(seed),
               image=canny_img
           ).images[0]
+      
+      (Image.fromarray(np.concatenate([original_img, canny_img, out_img], axis=1))).save(os.path.join(result_dir, img.split(".")[0]+"_out.png"))
   else:
       print("Path Error")
       return
-
-
-  # 원본, canny, output 이미지 합쳐서 저장
-  (Image.fromarray(np.concatenate([original_img, canny_img, out_img], axis=1))).save(os.path.join(result_dir, img.split(".")[0]+"_out.png"))
 
