@@ -1,6 +1,6 @@
 ## 1. Preparation
 - pip install -r requirements.txt
-- input image 사이즈 256x256 맞추기 (resize.py 사용)
+- input image 사이즈 256x256 맞추기 (resize.py 사용) / 사이즈 바뀐 이미지가 담긴 디렉토리 사용
 
 ## 2. Terminal command
 - Classification (ResNet)
