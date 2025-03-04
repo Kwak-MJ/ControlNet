@@ -1,10 +1,22 @@
 ## 1. Preparation
-requirement.txt 설치
+pip install -r requirements.txt
 
 ## 2. Terminal command
-python main.py --type "electric" --seed 10 --data_dir "None" --img_path C:/AI_Study/YAI/Controlnet/datasets/0016.jpg --result_dir C:/AI_Study/YAI/Controlnet/result_test
+- Classification (ResNet)
+python analysis.py --folder=human --model=models/classifier.pth  -- 폴더 내 모든
+python inference.py --image=human/sample.jpg --model=models/classifier.pth  -- 단일 이미지
+
+- Generation (ControlNet)
+python main.py --type "electric" --seed 20 --data_dir=human --img_path=None --result_dir=result --폴더 내 모든
+python main.py --type "electric" --seed 10 --data_dir=None --img_path=human/sample.jpg --result_dir=result -- 단일 이미지
 
 ### * params *
+1. Classification
+   - folder: 폴더 내 모든 이미지 분류할 때
+   - image: 특정 이미지만 분류할 때
+   - model: 분류 모델 경로
+
+2. Generation
 - type: 생성 원하는 이미지 타입
 - seed: NSFW 결과 나오면 조절
 - data_dir: 여러 이미지 한 번에 처리할 때, 이미지들이 있는 폴더 (이미지들 바로 상위여야함, 이때 --img_path는 None)
